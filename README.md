@@ -18,7 +18,7 @@ Api Documentation
 
 ### There are two types of registration first Doctor registration and second Patient registration
 
-### But first let's talk about authorization in this project where some endpoint user no auth and others need credentials
+### But first let's talk about authorization in this project where some endpoint use no auth and others need credentials
 
 ## For example Listing all categories use no auth which list all the clinic categories
 
@@ -28,7 +28,7 @@ Api Documentation
 ### CategoryList [GET]
 
 + Response 200 ok (application/json)
-      + body
+  + body
 
             [
                 {
@@ -148,7 +148,7 @@ Api Documentation
               "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NSwiZXhwIjoxNjMwMDA1Njg2fQ.sNu9bK6QhAF4oLtC2WlicwXqWpF8Kr6KhM6o9nKeY68"
             }
 
-### You need to save the user token that returns, so you can use in later
+### You need to save the user token that returns, so you can use it later
 
 ### Just like Listing Categories listing a single Category details need no auth
 
@@ -241,7 +241,7 @@ Api Documentation
 
 
 ## Doctors Clinic [GET]
-### Doctors ClinicList [Doctor/<int:pk>]
+### Doctors ClinicList [doctor/<int:pk>]
 
 + Request
   
@@ -256,8 +256,8 @@ Api Documentation
     ]
 }
     ```
-## Doctors Clinic [GET]
-### Doctors ClinicList [Doctor/<int:pk>]
+## Patient Clinic [GET]
+### Patient ClinicList [patient]
 
 + Request
   + header     ```Authorization: Token PateintAuthToken```
