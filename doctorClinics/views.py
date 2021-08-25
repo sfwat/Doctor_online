@@ -139,8 +139,8 @@ class ClinicReservation(APIView,):
             clinic.save()
             serializer = ClinicSerializer(clinic)
             return Response(serializer.data)
-        return HttpResponse(status=status.HTTP_500_INTERNAL_SERVER_ERROR
-)
+        except:
+            return HttpResponse(status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
 

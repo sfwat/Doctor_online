@@ -65,7 +65,6 @@ class JWTUserAuthentication(authentication.BaseAuthentication):
         try:
             payload = jwt.decode(token, settings.SECRET_KEY, algorithms='HS256')
         except Exception as e:
-            print(str(e))
             msg = 'Invalid authentication. Could not decode token.'
             raise exceptions.AuthenticationFailed(msg)
         try:
@@ -77,7 +76,7 @@ class JWTUserAuthentication(authentication.BaseAuthentication):
         if not user.is_active:
             msg = 'This user has been deactivated.'
             raise exceptions.AuthenticationFailed(msg)
-        return (user, token)
+        return user, token
 
 
 class JWTPatientAuthentication(authentication.BaseAuthentication):
@@ -154,4 +153,4 @@ class JWTPatientAuthentication(authentication.BaseAuthentication):
         if not user.is_active:
             msg = 'This user has been deactivated.'
             raise exceptions.AuthenticationFailed(msg)
-        return (user, token)
+        return user, token

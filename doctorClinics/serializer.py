@@ -49,13 +49,12 @@ class UserLoginSerializer(serializers.Serializer):
         # our database.
         email = data.get('email', None)
         password = data.get('password', None)
-        print(email, password)
+
         # The `authenticate` method is provided by Django and handles checking
         # for a user that matches this email/password combination. Notice how
         # we pass `email` as the `username` value since in our User
         # model we set `USERNAME_FIELD` as `email`.
         user = authenticate(username=email, password=password)
-        print(user)
         # If no user was found matching this email/password combination then
         # `authenticate` will return `None`. Raise an exception in this case.
         if user is None:
