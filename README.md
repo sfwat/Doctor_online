@@ -53,10 +53,10 @@ Api Documentation
                 }
             ]
   
-### Be sure to add all the categories you want before start testing some are added ClinicCategory class
+### Be sure to add all the categories you want before start testing some are already added to ClinicCategory class
 ### you can update it with more or just use the existing ones just create a super user 
 ### **python manage.py createsuperuser**
-### login to Admin site and add some categories
+### login to Admin site and add some categories and be sure to login with email not user name as a result for the CustomUser model i created
 
 ## Back to how to register now we have some categories and Doctors are ready to register
 
