@@ -73,11 +73,16 @@ class CategoryDetails(APIView,):
 class DoctorClinics(APIView,):
 
     def get_object(self, pk):
-        doctor = Doctor.objects.get(pk=pk)
+        try:
+            doctor = Doctor.objects.get(pk=pk)
+        except Doctor.DoesNotExist:
+            return HttpResponse(status=status.HTTP_404_NOT_FOUND)
         return doctor
 
     def get(self, request, pk):
         doctor = self.get_object(pk)
+        if isinstance(doctor, HttpResponse):
+            return doctor
         serializer = DoctorSerializer(doctor)
         return Response(serializer.data)
 
