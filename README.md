@@ -11,7 +11,7 @@ How to run app
 3. Create and activate Virtual environment **$virtualenv venv**    **$source/venv/bin/activate**
 4. Move to Doctor Online dir and install packages from requirments file **$ pip install -r requirments.txt**
 5. run migration command  **$python manage.py makemigrations**  **$python manage.py migrate**
-6. run the server ** python manage.py runserver**
+6. run the server **python manage.py runserver**
 
 Api Documentation
 ======================================
